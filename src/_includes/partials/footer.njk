@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h4>{{ site.name }}</h4>
+      <p>{{ site.address.street }}, {{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
+      <p>Call: <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+      <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <a href="/bathtub-refinishing/">Bathtub Refinishing</a>
+      <a href="/ceramic-tile-refinishing/">Tile Refinishing</a>
+      <a href="/sink-refinishing/">Sink Refinishing</a>
+      <a href="/countertop-refinishing/">Countertop Refinishing</a>
+    </div>
+    <div>
+      <h4>Resources</h4>
+      <a href="/warranty/">Warranty</a>
+      <a href="/care-maintenance/">Care & Maintenance</a>
+      <a href="/blogs/">Blog</a>
+      <a href="/before-after/">Before & After</a>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      {% for hour in site.hours %}
+      <p>{{ hour }}</p>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container subfooter">
+    © 2026 {{ site.name }}. All rights reserved.
+  </div>
+</footer>

@@ -1,0 +1,66 @@
+---
+layout: layouts/base.njk
+title: Contact Us
+pageKey: contact
+description: "Contact Austin Tub Surgeon for a free quote on bathtub, tile, sink, or countertop refinishing."
+permalink: /contact-us/index.html
+---
+<section class="page-hero">
+  <div class="container split">
+    <div class="reveal">
+      <span class="badge">Contact {{ site.name }}</span>
+      <h1 class="section-title">Let us plan your refinishing project</h1>
+      <p class="lead">Call, email, or send a request. We will respond with an estimate and next steps.</p>
+      <div class="hero-actions">
+        <a class="button" href="{{ site.phoneHref }}">Call {{ site.phone }}</a>
+        <a class="button secondary" href="mailto:{{ site.email }}">Email Us</a>
+      </div>
+    </div>
+    <div class="hero-panel reveal">
+      <h3>Service Area</h3>
+      <p>Round Rock, Austin, Georgetown, Pflugerville, Cedar Park, Hutto, Leander, and nearby Central Texas.</p>
+      <div class="hero-list">
+        <span>Mon-Fri 8:30 AM - 4 PM</span>
+        <span>Saturday 10 AM - 4 PM</span>
+        <span>Sunday closed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split">
+    <div class="reveal">
+      <h2 class="section-title">Request a free quote</h2>
+      <form class="form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact-us/">
+        <input type="hidden" name="form-name" value="quote" />
+        <p style="display:none;">
+          <label>Don’t fill this out if you are human: <input name="bot-field" /></label>
+        </p>
+        <input type="text" name="name" placeholder="Full name" required />
+        <input type="email" name="email" placeholder="Email address" required />
+        <input type="tel" name="phone" placeholder="Phone number" />
+        <select name="service">
+          <option>Service needed</option>
+          <option>Bathtub Refinishing</option>
+          <option>Tile Refinishing</option>
+          <option>Sink Refinishing</option>
+          <option>Countertop Refinishing</option>
+          <option>Chip & Crack Repair</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your project"></textarea>
+        <button class="button" type="submit">Send Request</button>
+      </form>
+      <p class="blog-meta">Form is Netlify-ready. Swap the action if you prefer another form provider.</p>
+    </div>
+    <div class="reveal">
+      <div class="image-placeholder" style="height:280px;"></div>
+      <div class="card" style="margin-top:1.6rem;">
+        <h3>Visit us</h3>
+        <p>{{ site.address.street }}<br />{{ site.address.city }}, {{ site.address.state }} {{ site.address.zip }}</p>
+        <p>Email: <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p>Phone: <a href="{{ site.phoneHref }}">{{ site.phone }}</a></p>
+      </div>
+    </div>
+  </div>
+</section>

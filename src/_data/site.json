@@ -1,0 +1,27 @@
+{
+  "name": "Austin Tub Surgeon",
+  "tagline": "Bathtub, tile, sink, and countertop refinishing in Austin",
+  "url": "https://www.austintubsurgeon.com",
+  "phone": "512-200-4661",
+  "phoneHref": "tel:5122004661",
+  "email": "contact@austintubsurgeon.com",
+  "address": {
+    "street": "1 Chisholm Trail",
+    "city": "Round Rock",
+    "state": "TX",
+    "zip": "78681"
+  },
+  "hours": [
+    "Mon-Fri: 8:30 AM - 4:00 PM",
+    "Saturday: 10:00 AM - 4:00 PM",
+    "Sunday: Closed"
+  ],
+  "nav": [
+    { "label": "Bathtub Refinishing", "url": "/bathtub-refinishing/", "key": "bathtub" },
+    { "label": "Tile Refinishing", "url": "/ceramic-tile-refinishing/", "key": "tile" },
+    { "label": "Countertops", "url": "/countertop-refinishing/", "key": "countertops" },
+    { "label": "Before & After", "url": "/before-after/", "key": "gallery" },
+    { "label": "Blog", "url": "/blogs/", "key": "blog" },
+    { "label": "Contact", "url": "/contact-us/", "key": "contact" }
+  ]
+}

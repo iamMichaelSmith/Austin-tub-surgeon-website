@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }} | {{ site.name }}</title>
+  <meta name="description" content="{{ description | default(site.tagline) }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <meta property="og:title" content="{{ title }} | {{ site.name }}" />
+  <meta property="og:description" content="{{ description | default(site.tagline) }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ title }} | {{ site.name }}" />
+  <meta name="twitter:description" content="{{ description | default(site.tagline) }}" />
+
+  <link rel="stylesheet" href="/assets/css/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{ site.name }}",
+    "url": "{{ site.url }}",
+    "telephone": "{{ site.phone }}",
+    "email": "{{ site.email }}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{ site.address.street }}",
+      "addressLocality": "{{ site.address.city }}",
+      "addressRegion": "{{ site.address.state }}",
+      "postalCode": "{{ site.address.zip }}",
+      "addressCountry": "US"
+    },
+    "areaServed": ["Austin", "Round Rock", "Georgetown", "Pflugerville", "Cedar Park", "Hutto", "Leander"],
+    "openingHours": ["Mo-Fr 08:30-16:00", "Sa 10:00-16:00"],
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body class="page-{{ pageKey }}">
+  {% include "partials/header.njk" %}
+  <main>
+    {{ content | safe }}
+  </main>
+  {% include "partials/footer.njk" %}
+
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>
