@@ -24,7 +24,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
     "name": "{{ site.name }}",
     "url": "{{ site.url }}",
     "telephone": "{{ site.phone }}",
@@ -36,6 +36,11 @@
       "addressRegion": "{{ site.address.state }}",
       "postalCode": "{{ site.address.zip }}",
       "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 30.51,
+      "longitude": -97.68
     },
     "areaServed": ["Austin", "Round Rock", "Georgetown", "Pflugerville", "Cedar Park", "Hutto", "Leander"],
     "openingHours": ["Mo-Fr 08:30-16:00", "Sa 10:00-16:00"],
@@ -75,6 +80,11 @@
     {{ content | safe }}
   </main>
   {% include "partials/footer.njk" %}
+
+  <div class="mobile-sticky-cta">
+    <h4>Ready for a fresh surface?</h4>
+    <a href="/contact-us/" class="button">Get Fast Quote</a>
+  </div>
 
   <script src="/assets/js/site.js"></script>
 </body>

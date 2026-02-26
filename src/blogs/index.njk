@@ -15,7 +15,30 @@ permalink: /blogs/index.html
 
 <section class="section">
   <div class="container">
-    <div class="card-grid">
+    <div class="split">
+      <div class="reveal">
+        <h2 class="section-title">Browse by topic</h2>
+        <p class="lead">Most Austin homeowners start with a simple question: cost, longevity, or whether refinishing beats replacement. These guides are written to answer those questions directly.</p>
+        <ul>
+          <li><strong>Refinishing vs. replacement:</strong> <a href="/blogs/refinishing-vs-replacement-round-rock/">Round Rock comparison</a>, <a href="/blogs/bathtub-refinishing-cost-austin/">Austin cost guide</a>, and <a href="/blogs/fiberglass-crack-repair-vs-replacement-austin/">fiberglass repair advice</a>.</li>
+          <li><strong>Care &amp; maintenance:</strong> <a href="/care-maintenance/">Maintenance overview</a>, and <a href="/blogs/cleaning-refinished-tub-pflugerville/">Pflugerville cleaning tips</a>.</li>
+          <li><strong>Landlords &amp; investors:</strong> <a href="/blogs/landlord-guide-tub-tile-refinishing-austin/">Austin landlord guide</a> and <a href="/blogs/apartment-turnover-refinishing-austin/">vacancy reduction tips</a>.</li>
+          <li><strong>Surface-specific tips:</strong> <a href="/blogs/sink-chip-repair-georgetown/">Sinks</a>, <a href="/blogs/tile-refinishing-vs-retile-austin/">Tile</a>, and <a href="/blogs/countertop-refinishing-austin-guide/">Countertops</a>.</li>
+        </ul>
+      </div>
+      <div class="reveal">
+        <div class="card">
+          <h3>Featured guides</h3>
+          <ul>
+            <li><a href="/blogs/bathtub-refinishing-safety-and-fumes-austin/">Is Refinishing Safe? (Fumes & Safety)</a></li>
+            <li><a href="/blogs/how-long-refinishing-lasts-central-texas/">How long does it last?</a></li>
+            <li><a href="/blogs/best-way-to-fix-bathtub-chips-austin/">The best way to fix chips</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card-grid" style="margin-top:2.5rem;">
       {# Auto-generated from src/blogs/*/index.njk #}
       {% for post in collections.posts %}
         <a class="card reveal" href="{{ post.url }}">

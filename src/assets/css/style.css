@@ -582,3 +582,41 @@ li {
   font-size: 0.85rem;
   color: rgba(29, 33, 38, 0.6);
 }
+
+/* Sticky Mobile CTA */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  border-top: 1px solid rgba(30, 140, 143, 0.1);
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .mobile-sticky-cta {
+    display: flex;
+  }
+  
+  body {
+    padding-bottom: 70px; /* Space for the sticky bar */
+  }
+}
+
+.mobile-sticky-cta h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.mobile-sticky-cta .button {
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  box-shadow: 0 8px 20px rgba(30, 140, 143, 0.2);
+}
