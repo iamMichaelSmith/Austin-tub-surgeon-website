@@ -98,6 +98,26 @@
     ]
   }
   </script>
+  {% if faq and faq.length %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {% for item in faq %}
+      {
+        "@type": "Question",
+        "name": {{ item.q | dump }},
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": {{ item.a | dump }}
+        }
+      }{% if not loop.last %},{% endif %}
+      {% endfor %}
+    ]
+  }
+  </script>
+  {% endif %}
   {% endif %}
 </head>
 <body class="page-{{ pageKey }}">

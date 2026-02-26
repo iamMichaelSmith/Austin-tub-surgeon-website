@@ -15,6 +15,27 @@ layout: layouts/base.njk
       </div>
     </div>
 
+    {% if faq and faq.length %}
+    <div class="card" style="margin-top:1.5rem;">
+      <h3>Frequently asked questions</h3>
+      {% for item in faq %}
+      <div class="faq-item">
+        <p><strong>{{ item.q }}</strong></p>
+        <p>{{ item.a }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="card" style="margin-top:1.5rem;">
+      <h3>Service area pages</h3>
+      <ul>
+        <li><a href="/service-areas/austin/">Austin refinishing services</a></li>
+        <li><a href="/service-areas/round-rock/">Round Rock refinishing services</a></li>
+        <li><a href="/service-areas/pflugerville/">Pflugerville refinishing services</a></li>
+      </ul>
+    </div>
+
     <div class="card" style="margin-top:1.5rem;">
       <h3>Related guides</h3>
       <ul>
