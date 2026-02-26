@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+---
+{{ content | safe }}
+
+<section class="section" style="padding-top: 1rem;">
+  <div class="container">
+    <div class="card">
+      <span class="eyebrow">Need a quote in Austin?</span>
+      <h2 style="margin-top:0.6rem;">Send photos. Get a fast refinishing estimate.</h2>
+      <p>We quote tubs, tile, sinks, and countertops across Austin, Round Rock, Pflugerville, Cedar Park, and nearby areas.</p>
+      <div class="hero-actions" style="margin-top:1rem;">
+        <a class="button" href="/contact-us/">Get My Fast Quote</a>
+        <a class="button secondary" href="/before-after/">See Before &amp; After Photos</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:1.5rem;">
+      <h3>Related guides</h3>
+      <ul>
+        {% for post in collections.posts %}
+          {% if post.url != page.url and loop.index <= 4 %}
+            <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -45,8 +45,19 @@ permalink: /blogs/index.html
           <div class="image-placeholder"></div>
           <h3>{{ post.data.title }}</h3>
           <p>{{ post.data.description }}</p>
+          <p class="blog-meta" style="margin-top:0.75rem;">Updated {{ post.date | sitemapDate }}</p>
         </a>
       {% endfor %}
+    </div>
+
+    <div class="card" style="margin-top:2rem;">
+      <h3>Popular next steps</h3>
+      <ul>
+        <li><a href="/bathtub-refinishing/">Bathtub refinishing service details</a></li>
+        <li><a href="/ceramic-tile-refinishing/">Tile refinishing service details</a></li>
+        <li><a href="/countertop-refinishing/">Countertop refinishing options</a></li>
+        <li><a href="/contact-us/">Request a fast quote (send photos)</a></li>
+      </ul>
     </div>
   </div>
 </section>

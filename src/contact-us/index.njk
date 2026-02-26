@@ -39,19 +39,35 @@ permalink: /contact-us/index.html
         </p>
         <input type="text" name="name" placeholder="Full name" required />
         <input type="email" name="email" placeholder="Email address" required />
-        <input type="tel" name="phone" placeholder="Phone number" />
-        <select name="service">
-          <option>Service needed</option>
+        <input type="tel" name="phone" placeholder="Phone number" required />
+        <input type="text" name="city" placeholder="Project city (Austin, Round Rock, etc.)" required />
+        <select name="service" required>
+          <option value="">Service needed</option>
           <option>Bathtub Refinishing</option>
           <option>Tile Refinishing</option>
           <option>Sink Refinishing</option>
           <option>Countertop Refinishing</option>
           <option>Chip & Crack Repair</option>
+          <option>Multi-surface project</option>
         </select>
-        <textarea name="message" placeholder="Tell us about your project"></textarea>
+        <select name="propertyType" required>
+          <option value="">Property type</option>
+          <option>Owner-occupied home</option>
+          <option>Rental property</option>
+          <option>Multi-family / apartment</option>
+          <option>Commercial</option>
+        </select>
+        <select name="timeline" required>
+          <option value="">Preferred timeline</option>
+          <option>ASAP (this week)</option>
+          <option>1-2 weeks</option>
+          <option>This month</option>
+          <option>Just researching</option>
+        </select>
+        <textarea name="message" placeholder="Tell us about your project (surface type, damage, color goal)"></textarea>
         <button class="button" type="submit">Send Request</button>
       </form>
-      <p class="blog-meta">Form is Netlify-ready. Swap the action if you prefer another form provider.</p>
+      <p class="blog-meta">Tip: Include links to photos in your message for faster and more accurate pricing.</p>
     </div>
     <div class="reveal">
       <div class="image-placeholder" style="height:280px;"></div>
