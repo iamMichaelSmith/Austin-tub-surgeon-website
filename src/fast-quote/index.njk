@@ -39,8 +39,13 @@ permalink: /fast-quote/index.html
         </p>
 
         <label>Upload photos (up to 5)
-          <input type="file" name="projectPhotos" accept="image/*" multiple capture="environment" required />
+          <input type="file" name="projectPhotos" id="projectPhotos" accept="image/*" multiple capture="environment" required />
         </label>
+
+        <div class="card" id="uploadPreview" style="padding:1rem; margin-top:0.4rem; display:none;">
+          <strong>Upload optimization preview</strong>
+          <p style="margin:0.4rem 0 0;" id="uploadPreviewSummary">Preparing image preview...</p>
+        </div>
 
         <div class="card" style="padding:1rem; margin-top:0.4rem;">
           <strong>Need a faster way?</strong>

@@ -49,3 +49,67 @@ if (window.location.pathname === '/thank-you/' || window.location.pathname === '
     });
   }
 }
+
+const photoInput = document.querySelector('#projectPhotos');
+const previewCard = document.querySelector('#uploadPreview');
+const previewSummary = document.querySelector('#uploadPreviewSummary');
+
+async function compressImageFile(file, maxWidth = 1600, quality = 0.82) {
+  if (!file.type.startsWith('image/')) return file;
+
+  const imageBitmap = await createImageBitmap(file);
+  const scale = Math.min(1, maxWidth / imageBitmap.width);
+  const targetWidth = Math.round(imageBitmap.width * scale);
+  const targetHeight = Math.round(imageBitmap.height * scale);
+
+  const canvas = document.createElement('canvas');
+  canvas.width = targetWidth;
+  canvas.height = targetHeight;
+
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(imageBitmap, 0, 0, targetWidth, targetHeight);
+
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/jpeg', quality));
+  if (!blob) return file;
+
+  const fileName = file.name.replace(/\.[^.]+$/, '') + '.jpg';
+  return new File([blob], fileName, { type: 'image/jpeg', lastModified: Date.now() });
+}
+
+if (photoInput) {
+  photoInput.addEventListener('change', async () => {
+    const files = Array.from(photoInput.files || []).slice(0, 5);
+    if (!files.length) return;
+
+    if (previewCard && previewSummary) {
+      previewCard.style.display = 'block';
+      previewSummary.textContent = 'Optimizing photos for faster upload...';
+    }
+
+    let originalBytes = 0;
+    let optimizedBytes = 0;
+    const outputFiles = [];
+
+    for (const file of files) {
+      originalBytes += file.size;
+      try {
+        const optimized = await compressImageFile(file);
+        optimizedBytes += optimized.size;
+        outputFiles.push(optimized);
+      } catch {
+        optimizedBytes += file.size;
+        outputFiles.push(file);
+      }
+    }
+
+    const transfer = new DataTransfer();
+    outputFiles.forEach((f) => transfer.items.add(f));
+    photoInput.files = transfer.files;
+
+    if (previewCard && previewSummary) {
+      const savedPct = originalBytes > 0 ? Math.max(0, Math.round((1 - optimizedBytes / originalBytes) * 100)) : 0;
+      const toMb = (n) => (n / (1024 * 1024)).toFixed(2);
+      previewSummary.textContent = `Optimized ${outputFiles.length} photo(s): ${toMb(originalBytes)}MB -> ${toMb(optimizedBytes)}MB (${savedPct}% smaller).`;
+    }
+  });
+}
