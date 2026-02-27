@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+title: Fast Quote - Upload Photos
+pageKey: contact
+description: "Upload photos and get a fast bathtub, tile, sink, or countertop refinishing estimate in Austin and nearby cities."
+permalink: /fast-quote/index.html
+---
+<section class="page-hero">
+  <div class="container split">
+    <div class="reveal">
+      <span class="badge">Fast Quote in Under 60 Seconds</span>
+      <h1 class="section-title">Upload project photos for your estimate</h1>
+      <p class="lead">Send 1-5 photos and a few project details. We will review and reply quickly with estimate guidance and next steps.</p>
+      <div class="hero-actions">
+        <a class="button" href="#fast-quote-form">Start Upload</a>
+        <a class="button secondary" href="{{ site.phoneHref }}">Call {{ site.phone }}</a>
+      </div>
+    </div>
+    <div class="hero-panel reveal">
+      <h3>Photo tips for fastest pricing</h3>
+      <div class="hero-list">
+        <span>1 full surface photo</span>
+        <span>1 close-up of chips/cracks/stains</span>
+        <span>1 wider room-angle photo for context</span>
+      </div>
+      <p class="blog-meta">Better photos = faster and more accurate estimate.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="fast-quote-form">
+  <div class="container split">
+    <div class="reveal">
+      <h2 class="section-title">Quick Quote Form</h2>
+      <form class="form" name="fast-quote" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" data-lead-form="true">
+        <input type="hidden" name="form-name" value="fast-quote" />
+        <p style="display:none;">
+          <label>Don't fill this out if you are human: <input name="bot-field" /></label>
+        </p>
+
+        <label>Upload photos (up to 5)
+          <input type="file" name="projectPhotos" accept="image/*" multiple capture="environment" required />
+        </label>
+
+        <div class="card" style="padding:1rem; margin-top:0.4rem;">
+          <strong>Need a faster way?</strong>
+          <p style="margin:0.4rem 0 0;">You can also text photos to <a href="sms:+15125931267">(512) 593-1267</a> or send via <a href="https://wa.me/15125931267" target="_blank" rel="noopener">WhatsApp</a>.</p>
+        </div>
+
+        <select name="service" required>
+          <option value="">Service needed</option>
+          <option>Bathtub Refinishing</option>
+          <option>Tile Refinishing</option>
+          <option>Sink Refinishing</option>
+          <option>Countertop Refinishing</option>
+          <option>Chip & Crack Repair</option>
+          <option>Multi-surface project</option>
+        </select>
+        <input type="text" name="city" placeholder="Project city (Austin, Round Rock, etc.)" required />
+        <input type="text" name="name" placeholder="Full name" required />
+        <input type="tel" name="phone" placeholder="Phone number" required />
+        <input type="email" name="email" placeholder="Email (optional but recommended)" />
+        <textarea name="message" placeholder="Anything we should know? (timing, damage, color goals)"></textarea>
+        <button class="button" type="submit">Send Photos & Get Estimate</button>
+      </form>
+    </div>
+    <div class="reveal">
+      <div class="faq">
+        <h3>What happens next?</h3>
+        <div class="faq-item">
+          <strong>Step 1</strong>
+          <p>We review your photos and project details.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Step 2</strong>
+          <p>We send estimate guidance and best service recommendation.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Step 3</strong>
+          <p>You choose your service date and we confirm your slot.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

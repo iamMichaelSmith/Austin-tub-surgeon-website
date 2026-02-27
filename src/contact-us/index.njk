@@ -11,6 +11,7 @@ permalink: /contact-us/index.html
       <span class="badge">Contact {{ site.name }}</span>
       <h1 class="section-title">Let us plan your refinishing project</h1>
       <p class="lead">Call, email, or send a request. We will respond with an estimate and next steps.</p>
+      <p><a class="button secondary" href="/fast-quote/">Prefer faster? Upload project photos here</a></p>
       <div class="hero-actions">
         <a class="button" href="{{ site.phoneHref }}">Call {{ site.phone }}</a>
         <a class="button secondary" href="mailto:{{ site.email }}">Email Us</a>
@@ -32,7 +33,7 @@ permalink: /contact-us/index.html
   <div class="container split">
     <div class="reveal">
       <h2 class="section-title">Request a free quote</h2>
-      <form class="form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/">
+      <form class="form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" data-lead-form="true">
         <input type="hidden" name="form-name" value="quote" />
         <p style="display:none;">
           <label>Don't fill this out if you are human: <input name="bot-field" /></label>

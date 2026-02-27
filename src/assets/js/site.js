@@ -22,20 +22,21 @@ const observer = new IntersectionObserver(
 
 reveals.forEach((el) => observer.observe(el));
 
-const quoteForm = document.querySelector('form[name="quote"]');
-if (quoteForm) {
-  quoteForm.addEventListener('submit', () => {
+const leadForms = document.querySelectorAll('form[data-lead-form="true"]');
+leadForms.forEach((formEl) => {
+  formEl.addEventListener('submit', () => {
+    const formName = formEl.getAttribute('name') || 'lead_form';
     if (window.dataLayer) {
-      window.dataLayer.push({ event: 'quote_form_submit' });
+      window.dataLayer.push({ event: 'quote_form_submit', form_name: formName });
     }
     if (window.gtag) {
       window.gtag('event', 'generate_lead', {
         event_category: 'engagement',
-        event_label: 'quote_form_submit'
+        event_label: formName
       });
     }
   });
-}
+});
 
 if (window.location.pathname === '/thank-you/' || window.location.pathname === '/thank-you/index.html') {
   if (window.dataLayer) {
