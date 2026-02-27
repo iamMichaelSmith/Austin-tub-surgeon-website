@@ -34,6 +34,9 @@ permalink: /fast-quote/index.html
       <h2 class="section-title">Quick Quote Form</h2>
       <form class="form" name="fast-quote" method="POST" enctype="multipart/form-data" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" data-lead-form="true">
         <input type="hidden" name="form-name" value="fast-quote" />
+        <input type="hidden" name="email-subject" value="New Job Request - Austin Tub Surgeon" />
+        <input type="hidden" name="smsLink" value="" />
+        <input type="hidden" name="uploadedFileNames" value="" />
         <p style="display:none;">
           <label>Don't fill this out if you are human: <input name="bot-field" /></label>
         </p>
@@ -61,6 +64,7 @@ permalink: /fast-quote/index.html
           <option>Chip & Crack Repair</option>
           <option>Multi-surface project</option>
         </select>
+        <input type="text" name="streetAddress" placeholder="Project street address" required />
         <input type="text" name="city" placeholder="Project city (Austin, Round Rock, etc.)" required />
         <input type="text" name="name" placeholder="Full name" required />
         <input type="tel" name="phone" placeholder="Phone number" required />

@@ -26,6 +26,21 @@ const leadForms = document.querySelectorAll('form[data-lead-form="true"]');
 leadForms.forEach((formEl) => {
   formEl.addEventListener('submit', () => {
     const formName = formEl.getAttribute('name') || 'lead_form';
+
+    const phoneInput = formEl.querySelector('input[name="phone"]');
+    const smsHidden = formEl.querySelector('input[name="smsLink"]');
+    if (phoneInput && smsHidden) {
+      const digits = (phoneInput.value || '').replace(/\D/g, '');
+      if (digits) smsHidden.value = `sms:+1${digits.length === 10 ? digits : digits.slice(-10)}`;
+    }
+
+    const fileInput = formEl.querySelector('input[type="file"][name="projectPhotos"]');
+    const namesHidden = formEl.querySelector('input[name="uploadedFileNames"]');
+    if (fileInput && namesHidden) {
+      const fileNames = Array.from(fileInput.files || []).map((f) => f.name);
+      namesHidden.value = fileNames.length ? fileNames.join(', ') : '(no files uploaded)';
+    }
+
     if (window.dataLayer) {
       window.dataLayer.push({ event: 'quote_form_submit', form_name: formName });
     }
@@ -105,6 +120,12 @@ if (photoInput) {
     const transfer = new DataTransfer();
     outputFiles.forEach((f) => transfer.items.add(f));
     photoInput.files = transfer.files;
+
+    const parentForm = photoInput.closest('form');
+    const namesHidden = parentForm ? parentForm.querySelector('input[name="uploadedFileNames"]') : null;
+    if (namesHidden) {
+      namesHidden.value = outputFiles.map((f) => f.name).join(', ');
+    }
 
     if (previewCard && previewSummary) {
       const savedPct = originalBytes > 0 ? Math.max(0, Math.round((1 - optimizedBytes / originalBytes) * 100)) : 0;

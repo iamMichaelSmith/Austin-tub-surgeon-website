@@ -35,12 +35,16 @@ permalink: /contact-us/index.html
       <h2 class="section-title">Request a free quote</h2>
       <form class="form" name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you/" data-lead-form="true">
         <input type="hidden" name="form-name" value="quote" />
+        <input type="hidden" name="email-subject" value="New Job Request - Austin Tub Surgeon" />
+        <input type="hidden" name="smsLink" value="" />
+        <input type="hidden" name="uploadedFileNames" value="(no files uploaded)" />
         <p style="display:none;">
           <label>Don't fill this out if you are human: <input name="bot-field" /></label>
         </p>
         <input type="text" name="name" placeholder="Full name" required />
         <input type="email" name="email" placeholder="Email address" required />
         <input type="tel" name="phone" placeholder="Phone number" required />
+        <input type="text" name="streetAddress" placeholder="Project street address" required />
         <input type="text" name="city" placeholder="Project city (Austin, Round Rock, etc.)" required />
         <select name="service" required>
           <option value="">Service needed</option>
