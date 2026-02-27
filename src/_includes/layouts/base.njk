@@ -13,10 +13,13 @@
   <meta property="og:description" content="{{ description | default(site.tagline) }}" />
   <meta property="og:type" content="{% if page.url and page.url.startsWith('/blogs/') and page.url != '/blogs/' %}article{% else %}website{% endif %}" />
   <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:image" content="{{ site.url }}{{ socialImage | default('/assets/img/og-default.svg') }}" />
+  <meta property="og:image:alt" content="{{ title }} | {{ site.name }}" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{{ title }} | {{ site.name }}" />
   <meta name="twitter:description" content="{{ description | default(site.tagline) }}" />
+  <meta name="twitter:image" content="{{ site.url }}{{ socialImage | default('/assets/img/og-default.svg') }}" />
 
   <link rel="stylesheet" href="/assets/css/style.css" />
 

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Austin Tub Surgeon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f3a"/>
+      <stop offset="100%" stop-color="#0055ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="490" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.22)"/>
+  <text x="120" y="250" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="66" font-weight="700">Austin Tub Surgeon</text>
+  <text x="120" y="330" fill="#dbe7ff" font-family="Arial, Helvetica, sans-serif" font-size="38">Bathtub • Tile • Sink • Countertop Refinishing</text>
+  <text x="120" y="400" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30">Round Rock + Austin Metro</text>
+</svg>

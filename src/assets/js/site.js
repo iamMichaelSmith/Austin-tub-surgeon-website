@@ -21,3 +21,30 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach((el) => observer.observe(el));
+
+const quoteForm = document.querySelector('form[name="quote"]');
+if (quoteForm) {
+  quoteForm.addEventListener('submit', () => {
+    if (window.dataLayer) {
+      window.dataLayer.push({ event: 'quote_form_submit' });
+    }
+    if (window.gtag) {
+      window.gtag('event', 'generate_lead', {
+        event_category: 'engagement',
+        event_label: 'quote_form_submit'
+      });
+    }
+  });
+}
+
+if (window.location.pathname === '/thank-you/' || window.location.pathname === '/thank-you/index.html') {
+  if (window.dataLayer) {
+    window.dataLayer.push({ event: 'quote_thank_you_view' });
+  }
+  if (window.gtag) {
+    window.gtag('event', 'conversion', {
+      event_category: 'lead',
+      event_label: 'quote_thank_you_view'
+    });
+  }
+}
