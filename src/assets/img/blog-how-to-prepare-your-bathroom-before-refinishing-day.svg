@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1600' height='900' viewBox='0 0 1600 900'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#0f5b60'/>
+      <stop offset='100%' stop-color='#1e8c8f'/>
+    </linearGradient>
+  </defs>
+  <rect width='1600' height='900' fill='url(#g)'/>
+  <rect x='80' y='80' width='1440' height='740' rx='24' fill='rgba(255,255,255,0.1)' stroke='rgba(255,255,255,0.25)'/>
+  <text x='130' y='290' fill='#ffffff' font-family='Arial, Helvetica, sans-serif' font-size='52' font-weight='700'>Austin Tub Surgeon Blog</text>
+  <text x='130' y='380' fill='#e9fffe' font-family='Arial, Helvetica, sans-serif' font-size='44'>How to Prepare Your Bathroom Before Refinishing Day</text>
+  <text x='130' y='455' fill='#ffffff' font-family='Arial, Helvetica, sans-serif' font-size='30'>Bathtub ? Tile ? Sink ? Countertop Refinishing</text>
+</svg>
