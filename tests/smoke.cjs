@@ -1,0 +1,1 @@
+const fs=require("fs");const req=["src/index.njk","src/robots.txt.njk","package.json"];const miss=req.filter(f=>!fs.existsSync(f));if(miss.length){console.error("Missing:",miss);process.exit(1)}console.log("Smoke OK: required files present");
