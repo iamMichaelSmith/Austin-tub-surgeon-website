@@ -58,3 +58,30 @@ npm run build   # production build to /dist
 ## Notes
 - Primary timezone for business operations: America/Chicago
 - Website is tuned for fast quote response and local search visibility
+
+## Local Development
+```bash
+npm ci
+npm run dev
+```
+
+## Build & CI
+Use CI to prevent broken deploys and content regressions.
+
+Local preflight:
+```bash
+npm ci
+npm run build
+```
+
+## Publish Checklist
+Before publishing pages/posts:
+- Verify phone number and service area consistency
+- Verify title/meta description targets the right search intent
+- Confirm canonical tags + sitemap inclusion
+- Check internal links and CTA destinations
+- Validate quote flow (`/fast-quote/` -> `/thank-you/`)
+
+## Operations Docs
+- `docs/SEO_CONTENT_CHECKLIST.md`
+- `docs/DEPLOY_CHECKLIST.md`
