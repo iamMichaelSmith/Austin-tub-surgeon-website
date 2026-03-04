@@ -1,9 +1,16 @@
 # Project Outcomes
 
-## Hiring-manager outcomes
-- Demonstrates static-site architecture and SEO content scaling
-- Shows repeatable build workflow for production deployment
-- Shows disciplined documentation and release-readiness practices
+## Problems solved
+- Slow quote requests from generic contact forms
+- Weak local SEO coverage across service-area intent
+- Inconsistent lead capture detail for dispatching estimates
 
-## Suggested resume bullet
-- Built and maintained an Eleventy-based static marketing site with reproducible build process and SEO-oriented page architecture.
+## Delivered outcomes
+- Fast quote path with upload-oriented UX
+- Expanded local SEO content architecture
+- Better structured lead payloads for follow-up
+
+## Next improvements
+- Add analytics dashboard for funnel drop-off
+- Add A/B testing for hero and CTA variants
+- Add CRM sync for lead lifecycle tracking
